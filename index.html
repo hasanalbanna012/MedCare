@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedCare</title>
+    <style>
+        body {
+            background-color: #E7F0EF;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #A1E9EE;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .header img {
+            height: 100px; /* Increased the logo size */
+            margin-right: 20px;
+        }
+        .menu {
+            display: flex;
+        }
+        .menu > div {
+            position: relative;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            padding: 15px 20px;
+            display: block;
+            font-weight: bold;
+        }
+        .menu a:hover {
+            background-color: #C1F1F3;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #A1E9EE;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            padding: 12px 16px;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .section {
+            position: relative;
+            width: 48%;
+            padding: 20px;
+            margin: 5px 1%;
+            background-color: #FFF;
+            border: 1px solid #CCC;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px black;
+            box-sizing: border-box;
+            height: 250px;
+            overflow: hidden; /* Ensure the overlay covers the entire section */
+        }
+        .section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+            z-index: 0; /* Place the overlay behind the text */
+        }
+        .section h2, .section p, .read-more {
+            position: relative;
+            z-index: 1; /* Place the text above the overlay */
+        }
+        .section h2 {
+            margin: 0;
+            -webkit-text-stroke: 1px black;
+        }
+        .section p {
+            -webkit-text-stroke: 0.5px black;
+        }
+        .read-more {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            text-decoration: none;
+            color: white;
+        }
+        .footer {
+            background-color: #A1E9EE;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.1em; /* Increased font size */
+        }
+        .footer a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer p {
+            margin: 10px 0;
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons img {
+            height: 30px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="logo-medcare-slogan.png" alt="MedCare Logo">
+        <nav class="menu">
+            <div class="dropdown">
+                <a href="#medicine">Medicine</a>
+                <div class="dropdown-content">
+                    <a href="#search-medicine">Search</a>
+                    <a href="#my-medicine">My Medicine</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#prescription">Prescription</a>
+                <div class="dropdown-content">
+                    <a href="#my-prescription">My Prescription</a>
+                    <a href="#add-prescription">Add Prescription</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#doctors">Doctors</a>
+                <div class="dropdown-content">
+                    <a href="#search-doctors">Search Doctors</a>
+                    <a href="#my-doctors">My Doctors</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#medical-tests">Medical Tests</a>
+                <div class="dropdown-content">
+                    <a href="#search-tests">Search Tests</a>
+                    <a href="#my-test-reports">My Test Reports</a>
+                    <a href="#add-test-reports">Add New Test Reports</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#hospitals">Hospitals</a>
+                <div class="dropdown-content">
+                    <a href="#hospital-doctors">Doctors</a>
+                    <a href="#hospital-tests">Tests</a>
+                    <a href="#accommodation">Accommodation</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#health-records">Health Records</a>
+                <div class="dropdown-content">
+                    <a href="#blood-pressure">Blood Pressure</a>
+                    <a href="#weight">Weight</a>
+                    <a href="#heart-rate">Heart Rate</a>
+                    <a href="#bmi">BMI</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#aboutus">About Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <div id="content">
+        <h1 style="padding: 20px;">Welcome to MedCare</h1>
+        
+
+        <div class="content">
+            <div id="medicine" class="section" style="background-image: url('pexels-pixabay-159211.jpg');">
+                <h2>Medicine</h2>
+                <p>Find and manage your medications with ease. Whether you need to search for specific drugs or keep track of your prescriptions, we've got you covered.</p>
+                <a href="#read-more-medicine" class="read-more">Read More</a>
+            </div>
+
+            <div id="prescription" class="section" style="background-image: url('online-prescription-medmate.svg');">
+                <h2>Prescription</h2>
+                <p>Manage your prescriptions efficiently. Add new prescriptions and keep track of existing ones to ensure you always have the medication you need.</p>
+                <a href="#read-more-prescription" class="read-more">Read More</a>
+            </div>
+
+            <div id="doctors" class="section" style="background-image: url('pexels-pixabay-40568.jpg');">
+                <h2>Doctors</h2>
+                <p>Search for doctors and manage your preferred doctors list. Stay connected with your healthcare providers.</p>
+                <a href="#read-more-doctors" class="read-more">Read More</a>
+            </div>
+
+            <div id="medical-tests" class="section" style="background-image: url('medical-tests.jpg');">
+                <h2>Medical Tests</h2>
+                <p>Search for medical tests, add new test reports, and keep track of your test history for better health management.</p>
+                <a href="#read-more-medical-tests" class="read-more">Read More</a>
+            </div>
+
+            <div id="hospitals" class="section" style="background-image: url('images (3).jpg');">
+                <h2>Hospitals</h2>
+                <p>Find hospitals, search for hospital doctors, check available tests, and explore accommodation options for your healthcare needs.</p>
+                <a href="#read-more-hospitals" class="read-more">Read More</a>
+            </div>
+
+            <div id="health-records" class="section" style="background-image: url('main-gettyimages-485855783-1515512813.jpg');">
+                <h2>Health Records</h2>
+                <p>Keep track of your health metrics such as blood pressure, weight, heart rate, and BMI to stay on top of your health.</p>
+                <a href="#read-more-health-records" class="read-more">Read More</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>
+            <a href="#aboutus">About Us</a> | 
+            <a href="#contactus">Contact Us</a> | 
+            <a href="#privacypolicy">Privacy Policy</a> | 
+            <a href="#disclaimer">Disclaimer</a> | 
+            <a href="#termsofuse">Terms of Use</a> | 
+            <a href="#mobileapp">Mobile App</a>
+        </p>
+        <p>Email: info@MedCare.com | Address: Daffodil smart City, DIU, Ashulia, Dhaka </p>
+        <div class="social-icons">
+            <a href="#facebook"><img src="Facebook_icon.svg.png" alt="Facebook"></a>
+            <a href="#twitter"><img src="8e72f7331b652b842b0c271ab144d332.png" alt="Twitter"></a>
+            <a href="#instagram"><img src="1491579602-yumminkysocialmedia36_83067.png" alt="Instagram"></a>
+        </div>
+    </footer>
+</body>
+</html>
