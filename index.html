@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MedCare</title>
+    <title>MediCare</title>
     <style>
         body {
             background-color: #E7F0EF;
@@ -49,6 +49,40 @@
         }
         .dropdown:hover .dropdown-content {
             display: block;
+        }
+        .top-segment {
+            position: relative;
+            width: 100%;
+            padding: 80px 20px; /* Increased the padding to make it twice as big */
+            background-image: url('free-medical-vectors.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px black;
+            text-align: center;
+        }
+        .top-segment::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+            z-index: 0; /* Place the overlay behind the text */
+        }
+        .top-segment h1, .top-segment p, .top-segment .visit-button {
+            position: relative;
+            z-index: 1; /* Place the text above the overlay */
+}
+        .visit-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-decoration: none;
         }
         .content {
             display: flex;
@@ -130,7 +164,7 @@
 </head>
 <body>
     <header class="header">
-        <img src="logo-medcare-slogan.png" alt="MedCare Logo">
+        <img src="logo-medcare-slogan.png" alt="MediCare Logo">
         <nav class="menu">
             <div class="dropdown">
                 <a href="#medicine">Medicine</a>
@@ -184,8 +218,12 @@
         </nav>
     </header>
 
-    <div id="content">
-        <h1 style="padding: 20px;">Welcome to MedCare</h1>
+    <div class="top-segment">
+        <h1>Welcome to MediCare</h1>
+        <p>Your comprehensive health management solution.</p>
+        <a href="#visit-us" class="visit-button">Visit us to know more</a>
+    </div>
+        
         
 
         <div class="content">
